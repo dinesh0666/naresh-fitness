@@ -520,6 +520,31 @@ section { position: relative; padding: 108px 0; }
 .view-all-cta { text-align: center; margin-top: 48px; }
 .btn-lg { padding: 18px 34px; font-size: 1rem; }
 
+/* ---------- Celebrity Clients ---------- */
+.celebrity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.celebrity-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.celebrity-card picture, .celebrity-card img { width: 100%; height: auto; display: block; }
+.celebrity-card figcaption { padding: 24px; }
+.celebrity-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: .02em;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.celebrity-card span { display: block; color: var(--text-muted); font-size: .9rem; line-height: 1.55; }
+
 /* ---------- Reviews ---------- */
 .section-head .rating-badge { margin-top: 8px; }
 .rating-badge {
@@ -541,6 +566,7 @@ section { position: relative; padding: 108px 0; }
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-bottom: 40px;
+  align-items: start;
 }
 .testimonial-card {
   background: var(--surface);
@@ -557,7 +583,7 @@ section { position: relative; padding: 108px 0; }
 .testimonial-author span { color: var(--text-faint); font-size: .8rem; }
 
 .testimonial-card--shot { padding: 0; overflow: hidden; }
-.testimonial-card--shot picture, .testimonial-card--shot img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.testimonial-card--shot picture, .testimonial-card--shot img { width: 100%; height: auto; display: block; }
 .testimonial-card--shot figcaption { padding: 20px; font-size: .92rem; color: var(--text); }
 .testimonial-card--shot figcaption span { display: block; margin-top: 10px; color: var(--text-faint); font-size: .78rem; }
 .testimonial-card--shot strong { color: var(--accent-2); }
@@ -787,6 +813,7 @@ section { position: relative; padding: 108px 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  align-items: start;
 }
 .recognition-card {
   background: var(--surface);
@@ -794,7 +821,7 @@ section { position: relative; padding: 108px 0; }
   border-radius: var(--radius);
   overflow: hidden;
 }
-.recognition-card picture, .recognition-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.recognition-card picture, .recognition-card img { width: 100%; height: auto; display: block; }
 .recognition-card figcaption { padding: 20px; }
 .recognition-card strong { display: block; margin-bottom: 6px; }
 .recognition-card span { color: var(--text-muted); font-size: .88rem; }
@@ -837,7 +864,10 @@ section { position: relative; padding: 108px 0; }
   .message-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
 }
 
-@media (max-width: 960px) {
+/* Header nav collapses earlier than other tablet breakpoints so the
+   9-item menu + WhatsApp button never overflow the header on laptop/tablet
+   widths (the header-inner row has no wrap, so it needs its own threshold). */
+@media (max-width: 1200px) {
   .nav { position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 340px);
     background: var(--bg-alt); border-left: 1px solid var(--border);
     padding: 110px 32px 32px; transform: translateX(100%); transition: transform .35s var(--ease);
@@ -846,10 +876,13 @@ section { position: relative; padding: 108px 0; }
   .nav ul { flex-direction: column; align-items: flex-start; gap: 22px; }
   .nav-link { font-size: 1.1rem; }
   .nav-toggle { display: flex; }
-  .header-cta span { display: none; }
-  .header-cta { padding: 12px; }
-  .header-cta .icon { margin: 0; }
+  /* The floating green WhatsApp button already gives constant access on
+     mobile/tablet, so hide the header CTA there to avoid two duplicate
+     circular WhatsApp icons stacked in the corner. */
+  .header-cta { display: none; }
+}
 
+@media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; text-align: left; }
   .hero-media { order: -1; margin-bottom: 12px; }
   .hero-portrait { width: min(100%, 300px); margin-inline: auto; }
@@ -861,6 +894,8 @@ section { position: relative; padding: 108px 0; }
   .method-grid { grid-template-columns: repeat(2, 1fr); }
 
   .transform-grid { grid-template-columns: 1fr; }
+
+  .celebrity-grid { grid-template-columns: 1fr; }
 
   .faq-grid { grid-template-columns: 1fr; }
 
