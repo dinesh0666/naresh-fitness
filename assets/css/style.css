@@ -851,6 +851,134 @@ section { position: relative; padding: 108px 0; }
 .gallery-cta .btn-primary:hover { background: #0a0a0b; color: #fff; }
 
 /* ==========================================================================
+   Fitness Tools Page
+   ========================================================================== */
+.tool-section--alt { background: var(--bg-alt); }
+
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.unit-toggle { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.unit-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color .2s var(--ease), color .2s var(--ease), background .2s var(--ease);
+}
+.unit-pill input { position: absolute; opacity: 0; width: 0; height: 0; }
+.unit-pill.is-active { border-color: var(--accent); color: var(--text); background: rgba(239,43,62,.12); }
+.unit-pill input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 999px; }
+
+.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 20px; }
+.tool-grid .form-row { margin-bottom: 20px; }
+.input-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.tool-error {
+  background: rgba(239,43,62,.12);
+  border: 1px solid var(--accent);
+  color: #ffb3ba;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: .88rem;
+  margin-bottom: 20px;
+}
+
+.tool-result {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.tool-note { margin-top: 20px; color: var(--text-faint); font-size: .82rem; line-height: 1.6; }
+
+/* BMI result */
+.tool-result-headline { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 28px; }
+.tool-result-value { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 4.2rem); line-height: 1; color: var(--text); }
+.tool-badge {
+  display: inline-flex;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.tool-badge--under { background: rgba(74,144,217,.16); color: #7ab4ea; }
+.tool-badge--normal { background: rgba(35,193,107,.16); color: var(--success); }
+.tool-badge--over { background: rgba(255,176,32,.16); color: var(--accent-2); }
+.tool-badge--obese { background: rgba(239,43,62,.16); color: var(--accent); }
+
+.bmi-gauge-track {
+  position: relative;
+  display: flex;
+  height: 14px;
+  border-radius: 999px;
+  overflow: visible;
+}
+.bmi-zone { display: block; height: 100%; }
+.bmi-zone:first-child { border-radius: 999px 0 0 999px; }
+.bmi-zone:last-child { border-radius: 0 999px 999px 0; }
+.bmi-zone--under { width: 14%; background: #4a90d9; }
+.bmi-zone--normal { width: 26%; background: var(--success); }
+.bmi-zone--over { width: 20%; background: var(--accent-2); }
+.bmi-zone--obese { width: 40%; background: var(--accent); }
+.bmi-gauge-marker {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 18px; height: 18px;
+  background: #fff;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,.5);
+  transform: translate(-50%, -50%);
+  transition: left .4s var(--ease);
+}
+.bmi-gauge-labels { display: flex; justify-content: space-between; margin-top: 10px; font-size: .76rem; color: var(--text-faint); }
+
+/* Calorie / macro result */
+.tool-stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.tool-stat {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.tool-stat--highlight { border-color: var(--accent); background: rgba(239,43,62,.08); }
+.tool-stat-label { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); margin-bottom: 10px; }
+.tool-stat-value { display: block; font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1; }
+.tool-stat-unit { display: block; font-size: .78rem; color: var(--text-faint); margin-top: 6px; }
+
+.macro-breakdown h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 16px; }
+.macro-bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--bg-alt); margin-bottom: 20px; }
+.macro-bar-seg { display: block; height: 100%; transition: width .4s var(--ease); }
+.macro-bar-seg--protein { background: var(--accent-2); }
+.macro-bar-seg--carbs { background: #4a90d9; }
+.macro-bar-seg--fat { background: var(--accent); }
+
+.macro-list { display: flex; flex-direction: column; gap: 12px; }
+.macro-item { display: flex; align-items: center; gap: 10px; font-size: .92rem; }
+.macro-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.macro-dot--protein { background: var(--accent-2); }
+.macro-dot--carbs { background: #4a90d9; }
+.macro-dot--fat { background: var(--accent); }
+.macro-name { flex-grow: 1; font-weight: 600; }
+.macro-grams { font-weight: 700; color: var(--text); }
+.macro-cal { color: var(--text-faint); font-size: .82rem; width: 80px; text-align: right; }
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 1080px) {
@@ -903,6 +1031,10 @@ section { position: relative; padding: 108px 0; }
 
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
+
+  .tool-card { padding: 28px 22px; }
+  .tool-stat-grid { grid-template-columns: 1fr 1fr; }
+  .tool-stat--highlight { grid-column: 1 / -1; }
 }
 
 @media (max-width: 620px) {
@@ -922,4 +1054,11 @@ section { position: relative; padding: 108px 0; }
   .disclaimer { text-align: left; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .hero-actions { flex-direction: column; }
+
+  .tool-grid { grid-template-columns: 1fr; }
+  .tool-stat-grid { grid-template-columns: 1fr; }
+  .tool-stat--highlight { grid-column: auto; }
+  .unit-toggle { flex-direction: column; align-items: stretch; }
+  .unit-pill { justify-content: center; }
+  .macro-cal { width: auto; }
 }

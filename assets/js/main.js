@@ -42,6 +42,7 @@
   var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
 
   function updateActiveLink() {
+    if (!sections.length) return;
     var scrollPos = window.scrollY + 140;
     var current = sections[0];
     sections.forEach(function (sec) {
@@ -140,50 +141,57 @@
   }
 
   /* ---------- Gallery lightbox ---------- */
+  /* Only present on pages with a photo gallery (index.html, gallery.html) -
+     guard the whole block so pages without it (e.g. tools.html) don't throw
+     and silently stop the rest of this shared script from running. */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");
   var lightboxClose = document.getElementById("lightboxClose");
   var lastFocused = null;
 
-  function openLightbox(src, alt) {
-    lastFocused = document.activeElement;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "";
-    lightbox.hidden = false;
-    lightboxClose.focus();
-    document.body.style.overflow = "hidden";
-  }
-  function closeLightbox() {
-    lightbox.hidden = true;
-    lightboxImg.src = "";
-    document.body.style.overflow = "";
-    if (lastFocused) lastFocused.focus();
-  }
-  document.querySelectorAll(".gallery-item").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var full = btn.getAttribute("data-full");
-      var img = btn.querySelector("img");
-      openLightbox(full, img ? img.alt : "");
+  if (lightbox && lightboxImg && lightboxClose) {
+    var openLightbox = function (src, alt) {
+      lastFocused = document.activeElement;
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "";
+      lightbox.hidden = false;
+      lightboxClose.focus();
+      document.body.style.overflow = "hidden";
+    };
+    var closeLightbox = function () {
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+      if (lastFocused) lastFocused.focus();
+    };
+    document.querySelectorAll(".gallery-item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var full = btn.getAttribute("data-full");
+        var img = btn.querySelector("img");
+        openLightbox(full, img ? img.alt : "");
+      });
     });
-  });
-  lightboxClose.addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", function (e) {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
-  });
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  }
 
   /* ---------- Back to top ---------- */
   var toTop = document.getElementById("toTop");
-  function onScrollTop() {
-    toTop.classList.toggle("visible", window.scrollY > 700);
+  if (toTop) {
+    var onScrollTop = function () {
+      toTop.classList.toggle("visible", window.scrollY > 700);
+    };
+    onScrollTop();
+    window.addEventListener("scroll", onScrollTop, { passive: true });
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
   }
-  onScrollTop();
-  window.addEventListener("scroll", onScrollTop, { passive: true });
-  toTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-  });
 
   /* ---------- Contact form -> WhatsApp ---------- */
   var form = document.getElementById("contactForm");

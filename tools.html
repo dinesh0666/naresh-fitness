@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Fitness Calculators: BMI, TDEE &amp; Macros | Naresh Fitness</title>
+<meta name="description" content="Free BMI calculator, maintenance calorie (TDEE) calculator and macro split calculator from Naresh Fitness. Get your numbers instantly, then message Naresh for a personalized plan.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dinesh0666.github.io/naresh-fitness/tools.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Naresh Fitness">
+<meta property="og:title" content="Free Fitness Calculators: BMI, TDEE &amp; Macros | Naresh Fitness">
+<meta property="og:description" content="Calculate your BMI, maintenance calories and macro split in seconds. Free tools from Naresh Fitness, Chennai.">
+<meta property="og:image" content="https://dinesh0666.github.io/naresh-fitness/assets/img/og-image.jpg">
+<meta property="og:url" content="https://dinesh0666.github.io/naresh-fitness/tools.html">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Fitness Calculators | Naresh Fitness">
+<meta name="twitter:image" content="https://dinesh0666.github.io/naresh-fitness/assets/img/og-image.jpg">
+
+<meta name="theme-color" content="#0a0a0b">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html#home" class="logo" aria-label="Naresh Fitness home">
+      <span class="logo-mark">NARESH</span><span class="logo-sub">FITNESS</span>
+    </a>
+
+    <nav class="nav" id="siteNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#method" class="nav-link">Method</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="index.html#results" class="nav-link">Results</a></li>
+        <li><a href="index.html#celebrities" class="nav-link">Celebrities</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="tools.html" class="nav-link active">Tools</a></li>
+        <li><a href="index.html#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://wa.me/919840808876?text=Hi%20Naresh%2C%20I%27d%20like%20to%20know%20more%20about%20your%20coaching%20programs!" class="btn btn-primary btn-sm header-cta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon"><use href="#icon-whatsapp"></use></svg>
+        <span>WhatsApp Naresh</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== TOOLS HERO ===================== -->
+  <section class="gallery-hero">
+    <div class="container">
+      <p class="eyebrow reveal">Free Fitness Calculators</p>
+      <h1 class="section-title reveal">KNOW YOUR NUMBERS</h1>
+      <p class="section-sub reveal">Quick, free tools to estimate your BMI, daily maintenance calories and macro split. These are a starting point &ndash; message Naresh for a plan built exactly around your body and goals.</p>
+      <a href="index.html" class="text-link reveal">&larr; Back to home</a>
+    </div>
+  </section>
+
+  <!-- ===================== BMI CALCULATOR ===================== -->
+  <section class="tool-section" id="bmi">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal">Tool 01</p>
+        <h2 class="section-title reveal">BMI CALCULATOR</h2>
+        <p class="section-sub reveal">Body Mass Index gives a quick, general read on your weight relative to your height.</p>
+      </div>
+
+      <div class="tool-card reveal">
+        <form id="bmiForm" class="tool-form" novalidate>
+          <div class="unit-toggle" role="radiogroup" aria-label="Units">
+            <label class="unit-pill">
+              <input type="radio" name="bmiUnit" value="metric" checked>
+              <span>Metric (cm / kg)</span>
+            </label>
+            <label class="unit-pill">
+              <input type="radio" name="bmiUnit" value="imperial">
+              <span>Imperial (ft-in / lb)</span>
+            </label>
+          </div>
+
+          <div class="tool-grid">
+            <div class="form-row" data-unit="metric">
+              <label for="bmi-height-cm">Height (cm)</label>
+              <input type="number" id="bmi-height-cm" data-field="heightCm" placeholder="e.g. 175" min="60" max="260" step="0.1" inputmode="decimal">
+            </div>
+            <div class="form-row" data-unit="imperial" hidden>
+              <label for="bmi-height-ft">Height (ft / in)</label>
+              <div class="input-pair">
+                <input type="number" id="bmi-height-ft" data-field="heightFt" placeholder="ft" min="3" max="8" inputmode="numeric">
+                <input type="number" id="bmi-height-in" data-field="heightIn" placeholder="in" min="0" max="11" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="form-row" data-unit="metric">
+              <label for="bmi-weight-kg">Weight (kg)</label>
+              <input type="number" id="bmi-weight-kg" data-field="weightKg" placeholder="e.g. 70" min="20" max="350" step="0.1" inputmode="decimal">
+            </div>
+            <div class="form-row" data-unit="imperial" hidden>
+              <label for="bmi-weight-lb">Weight (lb)</label>
+              <input type="number" id="bmi-weight-lb" data-field="weightLb" placeholder="e.g. 154" min="44" max="770" step="0.1" inputmode="decimal">
+            </div>
+          </div>
+
+          <p class="tool-error" id="bmiError" role="alert" hidden>Please enter a valid height and weight.</p>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Calculate BMI</span>
+          </button>
+        </form>
+
+        <div class="tool-result" id="bmiResult" hidden>
+          <div class="tool-result-headline">
+            <span class="tool-result-value" id="bmiValue">0</span>
+            <span class="tool-badge" id="bmiCategoryLabel">Normal Weight</span>
+          </div>
+
+          <div class="bmi-gauge">
+            <div class="bmi-gauge-track">
+              <span class="bmi-zone bmi-zone--under"></span>
+              <span class="bmi-zone bmi-zone--normal"></span>
+              <span class="bmi-zone bmi-zone--over"></span>
+              <span class="bmi-zone bmi-zone--obese"></span>
+              <span class="bmi-gauge-marker" id="bmiGaugeMarker"></span>
+            </div>
+            <div class="bmi-gauge-labels">
+              <span>Underweight</span>
+              <span>Normal</span>
+              <span>Overweight</span>
+              <span>Obese</span>
+            </div>
+          </div>
+          <p class="tool-note">BMI doesn&rsquo;t account for muscle mass, bone density or body composition. It&rsquo;s a general screening number, not a diagnosis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CALORIE & MACRO CALCULATOR ===================== -->
+  <section class="tool-section tool-section--alt" id="calories">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal">Tool 02</p>
+        <h2 class="section-title reveal">MAINTENANCE CALORIES &amp; MACROS</h2>
+        <p class="section-sub reveal">Find your BMR, daily maintenance calories (TDEE) and a protein / carb / fat split based on your goal.</p>
+      </div>
+
+      <div class="tool-card reveal">
+        <form id="calorieForm" class="tool-form" novalidate>
+          <div class="unit-toggle" role="radiogroup" aria-label="Gender">
+            <label class="unit-pill">
+              <input type="radio" name="calGender" value="male" checked>
+              <span>Male</span>
+            </label>
+            <label class="unit-pill">
+              <input type="radio" name="calGender" value="female">
+              <span>Female</span>
+            </label>
+          </div>
+
+          <div class="unit-toggle" role="radiogroup" aria-label="Units">
+            <label class="unit-pill">
+              <input type="radio" name="calUnit" value="metric" checked>
+              <span>Metric (cm / kg)</span>
+            </label>
+            <label class="unit-pill">
+              <input type="radio" name="calUnit" value="imperial">
+              <span>Imperial (ft-in / lb)</span>
+            </label>
+          </div>
+
+          <div class="tool-grid">
+            <div class="form-row">
+              <label for="cal-age">Age</label>
+              <input type="number" id="cal-age" data-field="age" placeholder="e.g. 28" min="14" max="90" inputmode="numeric">
+            </div>
+
+            <div class="form-row" data-unit="metric">
+              <label for="cal-height-cm">Height (cm)</label>
+              <input type="number" id="cal-height-cm" data-field="heightCm" placeholder="e.g. 175" min="120" max="230" step="0.1" inputmode="decimal">
+            </div>
+            <div class="form-row" data-unit="imperial" hidden>
+              <label for="cal-height-ft">Height (ft / in)</label>
+              <div class="input-pair">
+                <input type="number" id="cal-height-ft" data-field="heightFt" placeholder="ft" min="3" max="8" inputmode="numeric">
+                <input type="number" id="cal-height-in" data-field="heightIn" placeholder="in" min="0" max="11" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="form-row" data-unit="metric">
+              <label for="cal-weight-kg">Weight (kg)</label>
+              <input type="number" id="cal-weight-kg" data-field="weightKg" placeholder="e.g. 70" min="30" max="300" step="0.1" inputmode="decimal">
+            </div>
+            <div class="form-row" data-unit="imperial" hidden>
+              <label for="cal-weight-lb">Weight (lb)</label>
+              <input type="number" id="cal-weight-lb" data-field="weightLb" placeholder="e.g. 154" min="66" max="660" step="0.1" inputmode="decimal">
+            </div>
+
+            <div class="form-row">
+              <label for="cal-activity">Activity Level</label>
+              <select id="cal-activity" data-field="activity">
+                <option value="sedentary">Sedentary (little or no exercise)</option>
+                <option value="light">Light (exercise 1&ndash;3 days/week)</option>
+                <option value="moderate" selected>Moderate (exercise 3&ndash;5 days/week)</option>
+                <option value="active">Active (exercise 6&ndash;7 days/week)</option>
+                <option value="veryActive">Very Active (hard training + physical job)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="cal-goal">Goal</label>
+              <select id="cal-goal" data-field="goal">
+                <option value="lose">Lose Weight / Fat Loss</option>
+                <option value="maintain" selected>Maintain Current Weight</option>
+                <option value="gain">Build Muscle</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="tool-error" id="calorieError" role="alert" hidden>Please enter a valid age, height and weight.</p>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Calculate My Numbers</span>
+          </button>
+        </form>
+
+        <div class="tool-result" id="calorieResult" hidden>
+          <div class="tool-stat-grid">
+            <div class="tool-stat">
+              <span class="tool-stat-label">BMR</span>
+              <span class="tool-stat-value" id="bmrValue">0</span>
+              <span class="tool-stat-unit">kcal/day</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-label">Maintenance (TDEE)</span>
+              <span class="tool-stat-value" id="tdeeValue">0</span>
+              <span class="tool-stat-unit">kcal/day</span>
+            </div>
+            <div class="tool-stat tool-stat--highlight">
+              <span class="tool-stat-label" id="goalCalLabel">Your Target</span>
+              <span class="tool-stat-value" id="goalCalValue">0</span>
+              <span class="tool-stat-unit">kcal/day</span>
+            </div>
+          </div>
+
+          <div class="macro-breakdown">
+            <h3>Suggested Daily Macros</h3>
+            <div class="macro-bar">
+              <span class="macro-bar-seg macro-bar-seg--protein" id="macroBarProtein"></span>
+              <span class="macro-bar-seg macro-bar-seg--carbs" id="macroBarCarbs"></span>
+              <span class="macro-bar-seg macro-bar-seg--fat" id="macroBarFat"></span>
+            </div>
+            <div class="macro-list">
+              <div class="macro-item">
+                <span class="macro-dot macro-dot--protein"></span>
+                <span class="macro-name">Protein</span>
+                <span class="macro-grams" id="macroProteinG">0g</span>
+                <span class="macro-cal" id="macroProteinCal">0 kcal</span>
+              </div>
+              <div class="macro-item">
+                <span class="macro-dot macro-dot--carbs"></span>
+                <span class="macro-name">Carbs</span>
+                <span class="macro-grams" id="macroCarbsG">0g</span>
+                <span class="macro-cal" id="macroCarbsCal">0 kcal</span>
+              </div>
+              <div class="macro-item">
+                <span class="macro-dot macro-dot--fat"></span>
+                <span class="macro-name">Fat</span>
+                <span class="macro-grams" id="macroFatG">0g</span>
+                <span class="macro-cal" id="macroFatCal">0 kcal</span>
+              </div>
+            </div>
+          </div>
+          <p class="tool-note">Estimates based on the Mifflin-St Jeor equation. Real results depend on consistency, sleep, stress and individual metabolism &ndash; a coached plan adjusts these numbers as you progress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOOLS CTA ===================== -->
+  <section class="gallery-cta">
+    <div class="container">
+      <h2 class="section-title reveal">WANT A PLAN BUILT EXACTLY FOR YOU?</h2>
+      <p class="section-sub reveal">These numbers are a starting point. Message Naresh for a personalized workout and nutrition plan that adjusts as you progress.</p>
+      <a href="https://wa.me/919840808876?text=Hi%20Naresh%2C%20I%20used%20the%20calculators%20on%20your%20website%20and%20I%27d%20like%20a%20personalized%20plan!" class="btn btn-primary btn-lg reveal" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon"><use href="#icon-whatsapp"></use></svg>
+        <span>Start on WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html#home" class="logo"><span class="logo-mark">NARESH</span><span class="logo-sub">FITNESS</span></a>
+      <p>Let&rsquo;s get fit, one honest plan at a time.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/nareshfitness/" target="_blank" rel="noopener" aria-label="Naresh Fitness on Instagram"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
+        <a href="https://www.youtube.com/@nareshfitnesslifestyle" target="_blank" rel="noopener" aria-label="Naresh Fitness on YouTube"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
+        <a href="https://wa.me/919840808876" target="_blank" rel="noopener" aria-label="Message Naresh Fitness on WhatsApp"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+        <a href="mailto:nareshfitness3@gmail.com" aria-label="Email Naresh Fitness"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#celebrities">Celebrities</a></li>
+        <li><a href="gallery.html">Full Gallery</a></li>
+        <li><a href="tools.html">Fitness Calculators</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Chennai, Tamil Nadu</li>
+        <li><a href="tel:+919840808876">+91 98408 08876</a></li>
+        <li><a href="mailto:nareshfitness3@gmail.com">nareshfitness3@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Naresh Fitness. All rights reserved.</p>
+    <p class="disclaimer">Calculator results are estimates for general informational purposes only and are not medical advice. Results vary by individual.</p>
+  </div>
+</footer>
+
+<!-- Floating actions -->
+<a href="https://wa.me/919840808876?text=Hi%20Naresh%2C%20I%27d%20like%20to%20know%20more%20about%20your%20coaching!" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon"><use href="#icon-whatsapp"></use></svg>
+</a>
+<button class="fab fab-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon"><use href="#icon-arrow-up"></use></svg>
+</button>
+
+<!-- SVG Icon Sprite -->
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <g id="icon-whatsapp"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.1c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.3.9.9-3.2-.2-.3C3.6 13.6 3.1 12 3.1 10.3v-.1C3.1 5.6 7.1 2 12 2c2.4 0 4.7 1 6.4 2.7 1.7 1.7 2.6 4 2.6 6.3 0 4.9-4 8.9-9 9.1z"/></g>
+    <g id="icon-arrow-up"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 20V4m0 0l-6 6m6-6l6 6"/></g>
+    <g id="icon-mail"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3.5 6.5l8.5 6 8.5-6"/></g>
+    <g id="icon-instagram"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></g>
+    <g id="icon-youtube"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M10.5 9.5l5 2.5-5 2.5z"/></g>
+  </defs>
+</svg>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/tools.js" defer></script>
+</body>
+</html>
