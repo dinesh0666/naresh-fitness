@@ -2,7 +2,7 @@
 
 The official website for **Naresh Fitness** — Naresh Kumar, a certified fitness expert, Pilates instructor and Men's Physique athlete (Mr. India 2K19) coaching clients online worldwide and in person in Chennai, India.
 
-🔗 **Live site:** https://dinesh0666.github.io/naresh-fitness/
+🔗 **Live site:** https://nareshfitness.com/
 
 ## About this project
 

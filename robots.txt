@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dinesh0666.github.io/naresh-fitness/sitemap.xml
+Sitemap: https://nareshfitness.com/sitemap.xml
